@@ -1,0 +1,23 @@
+
+
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: SAMPLE_DB
+    freshness: # default freshness
+      warn_after: {count: 12, period: hour}
+      error_after: {count: 24, period: hour}
+    loaded_at_field: _etl_loaded_at
+
+    tables:
+      - name: SAMPLE_ORDERS
+        freshness: # make this a little more strict
+          warn_after: {count: 6, period: hour}
+          error_after: {count: 12, period: hour}
+
+      - name: SAMPLE1_ORDERS 
+
+
+         
+    
